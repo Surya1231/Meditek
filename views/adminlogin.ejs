@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <title>Login Page</title>
+
+    <style media="screen">
+      body{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Ubuntu', sans-serif;
+        background: url('back.jpeg');
+        background-size: cover;
+        background-position: 50% 40%;
+        background-repeat: no-repeat;
+      }
+      .head{
+        border: 2px solid lightgreen;
+        background-color: white;
+        box-shadow: 2px 0 22px grey;
+        height: auto;
+        width: 100%;
+        padding: 10px 30px;
+        overflow: auto;
+        box-sizing: border-box;
+      }
+      .logo1{
+        width: 100px;
+        height: 60px;
+        background: url('logo.png');
+        background-position: 50% 50%;
+        background-size: cover;
+        float: left;
+      }
+      .logo2{
+        height: 30px;
+        float: left;
+        padding: 11px 0 0 10px;
+        font-size: 33px;
+      }
+      .login{
+        border-radius: 7px;
+        box-shadow: 5px 5px 20px grey;
+        text-align: center;
+        background-color: lightgrey;
+        width: 55%;
+        margin: 120px auto;
+        height: auto;
+        display: flex;
+      }
+      .login1{
+        background: linear-gradient(to right, #859398, #283048);
+        width: 40%;
+        padding: 70px 0;
+      }
+      .login2{
+        padding: 55px 0;
+        width: 60%;
+      }
+      .one{
+        width: 150px;
+        height: 90px;
+        margin: auto;
+        background: url('logo.png');
+        background-size: cover;
+        background-position: 50% 50%;
+      }
+      .two{
+        margin: 10px auto;
+        text-align: center;
+        font-size: 30px;
+        width: 80%;
+        color: white;
+      }
+      .three ul li{
+        color: white;
+        font-size: 18px;
+        line-height: 35px;
+      }
+      .four{
+        margin: auto;
+        width: 90%;
+      }
+      .nav{
+        width: 51%;
+        margin: auto;
+      }
+      .nav ul{
+        padding: 0;
+        margin: 0;
+        list-style-type: none;
+        overflow: hidden;
+      }
+      .nav li{
+        border-radius: 10px;
+        border-bottom: 3px solid tomato;
+        padding: 15px 42px;
+        display: inline-block;
+        color: black;
+        font-size: 20px;
+        cursor: pointer;
+      }
+
+      .content{
+        box-sizing: border-box;
+        width: 95%;
+        margin: 30px auto;
+      }
+      .content input{
+        font-size: 20px;
+        line-height: 8px;
+        width: 90%;
+        border: none;
+        border-bottom: 3px solid tomato;
+        border-radius: 5px;
+        display: block;
+        padding: 20px;
+        margin: 10px auto;
+        font-family: 'Ubuntu', sans-serif;
+      }
+      .button{
+        display: block;
+        text-align: center;
+        font-size: 20px;
+        margin: auto;
+        padding: 10px 20px;
+        background-color: #EF7B8B;
+        border: 0;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: all .5s;
+      }
+      .button span {
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+        transition: 0.5s;
+      }
+
+      .button span:after {
+        content: '\00bb';
+        position: absolute;
+        opacity: 0;
+        top: 0;
+        right: -20px;
+        transition: 0.5s;
+      }
+
+      .button:hover span {
+        padding-right: 25px;
+      }
+
+      .button:hover span:after {
+        opacity: 1;
+        right: 0;
+      }
+      .five{
+        width: 50%;
+        margin: 10px auto;
+        color: black;
+        text-align: center;
+      }
+      .six{
+        overflow: auto;
+        width: 30%;
+        margin: 20px auto;
+        padding: 15px;
+      }
+      .left, .right{
+        padding: 10px;
+        border-radius: 25px;
+        background-color: white;
+        text-align: center;
+        width: 21%;
+        display: inline-block;
+        font-size: 30px;
+        cursor: pointer;
+        transition: all .2s;
+      }
+      .left{
+        float: left;
+      }
+      .right{
+        float: right;
+      }
+      .right:hover, .left:hover{
+        box-shadow: 4px 4px 12px grey;
+      }
+
+      #signupcontainer {
+        display:none;
+      }
+
+    </style>
+  </head>
+
+  <body>
+
+      <div class="head">
+        <div class="logo1">
+        </div>
+        <div class="logo2">
+          Meditek
+        </div>
+      </div>
+
+      <div class="login">
+        <div class="login1">
+
+          <div class="one">
+          </div>
+
+          <div class="two">
+            Meditek Admin Panel
+          </div>
+
+          <div class="three">
+            <ul>
+              <li>Gps Based technology platform for ambulances</li>
+              <li>High Quality strategically placed ambulances for faster response time</li>
+              <li>24/7 emergencies and technical support</li>
+              <li>Experienced doctors to help in better decision making</li>
+            </ul>
+          </div>
+
+        </div>
+        <div class="login2">
+          <div class="four">
+
+              <div class="nav">
+                <ul>
+                  <li onclick="function1()">Login</li>
+                </ul>
+              </div>
+         <div id="logincontainer">
+
+              <div class="content">
+                <form action="/adminlogin" method="POST">
+                  <input type="text" name="username" placeholder="Mobile or Email">
+                  <input type="password" name="password" placeholder="Password">
+                <button class="button" style="vertical-align:middle"><i class="fas fa-sign-in-alt"></i> <span>Login </span></button>
+                </form>
+              </div>
+          <div class="five">
+
+        </div>
+
+        
+
+        </div>
+      </div>
+
+    
+  </body>
+</html>

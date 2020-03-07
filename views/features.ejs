@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+    <link rel="icon" href="logo.png">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+		<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+    <title></title>
+
+    <style media="screen">
+
+      body{
+        margin: 0px;
+        padding: 0px;
+        font-family: 'Ubuntu', sans-serif;
+      }
+
+      .head{
+        background-color: white;
+        box-shadow: 2px 0 22px grey;
+        height: auto;
+        width: 100%;
+        color:black;
+        padding: 10px 30px;
+        overflow: auto;
+        box-sizing: border-box;
+        background: white;
+      }
+      .logo1{
+        width: 100px;
+        height: 60px;
+        background: url('logo.png');
+        background-position: 50% 50%;
+        background-size: cover;
+        float: left;
+      }
+      .logo2{
+        height: 30px;
+        float: left;
+        padding: 11px 0 0 10px;
+        font-size: 33px;
+      }
+      .logo3{
+        cursor: pointer;
+        height: 60px;
+        float: right;
+        font-size: 15px;
+        margin-right: 15px;
+      }
+
+      .logo3-inside{
+				font-size: 22px;
+        position: relative;
+        top: 40%;
+        display:block
+      }
+      .login{
+        background-color: ivory;
+        width: 55%;
+        margin: 50px auto;
+        height: auto;
+        display: flex;
+      }
+
+      .containermain {
+        width: 100%;
+        height: 660px;
+        position: relative;
+        text-align: center;
+        color: white;
+        background:url('bg.jpg');
+        background-position: 50% 50%;
+        background-size: cover;
+        }
+
+        img{
+          width: 100%;
+          height: 400px;
+        }
+
+      .centered1 {
+         font-size: 45px;
+         position: absolute;
+         top: 40%;
+         left: 50%;
+         transform: translate(-50%, -50%);
+         font-weight: 580;
+       }
+
+      .centered2 {
+        font-size: 22px;
+         position: absolute;
+				 font-weight: 300;
+         top: 48%;
+         left: 50%;
+         transform: translate(-50%, -50%);
+      }
+
+      .bottom-center {
+        position: absolute;
+        bottom: 0%;
+        left: 30%;
+        height: 10%;
+        width: 40%;
+        background: transparent;
+      }
+
+      .tablinks {
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        width:32%;
+        margin-right: 1%;
+        float:Left;
+        text-align: center;
+        background: transparent;
+        height:100%;
+        text-transform: uppercase;
+        display: table-cell;
+        vertical-align: middle;
+        font-size: 1.2vw;
+        cursor: pointer;
+      }
+
+      .vertical{
+        width:100%;
+        text-align:center;
+        position:relative;
+        top:30%;
+        text-align: center;
+
+      }
+
+      .tablinks :hover{
+        color : gray;
+      }
+
+      .selectedtab {
+        background: white;
+
+        color: black;
+      }
+
+      .clear {
+        clear: both;
+      }
+			.logo3:hover .fa-sign-out-alt{
+				color: tomato;
+			}
+			.logo3:hover .fa-user {
+				color: dodgerblue;
+			}
+			.logo3:hover .fa-list-ul{
+				color: dodgerblue;
+			}
+			.logo3:hover .fa-table{
+				color: violet;
+			}
+			ol > li{
+				font-size: 20px;
+				font-weight: 500;
+			}
+			ul li{
+				font-size: 17px;
+				font-weight: 300;
+			}
+			#treatment{
+
+
+			}
+			.display1, .display2, .display3, .display4, .display5{
+				box-shadow: 1px 3px 20px lightgrey;
+				padding: 15px;
+				width: 25%;
+				margin: 20px;
+			}
+			.display1, .display2, .display3, .display4, .display5 p{
+				color: #555555;
+				font-size: 18px;
+				line-height: 27px;
+			}
+			#img1{
+				border-radius: 7px;
+				transition: all .3s;
+				background: url('fracture.jpg');
+				background-size: cover;
+				background-position: center;
+				box-shadow: 1px 3px 20px grey;
+				height: 300px;
+				width: 470px;
+			}
+			#img2{
+				border-radius: 7px;
+				transition: all .3s;
+				background: url('bleeding.jpg');
+				background-size: cover;
+				background-position: center;
+				height: 300px;
+				box-shadow: 1px 3px 20px grey;
+				width: 470px;
+			}
+			#img3{
+								border-radius: 7px;
+				transition: all .3s;
+				background: url('cardiac.jpg');
+				background-size: cover;
+				background-position: center;
+				height: 300px;
+				width: 470px;
+				box-shadow: 1px 3px 20px grey;
+			}
+			#img4{
+								border-radius: 7px;
+				transition: all .3s;
+				background: url('burns.jpg');
+				background-size: cover;
+				background-position: center;
+				height: 300px;
+				width: 470px;
+				box-shadow: 1px 3px 20px grey;
+			}
+			#img5{
+								border-radius: 7px;
+				transition: all .3s;
+				background: url('sprains.jpg');
+				background-size: cover;
+				background-position: center;
+				height: 300px;
+				width: 470px;
+				box-shadow: 1px 3px 20px grey;
+			}
+			.display1:hover #img1{
+				transform: scale(1.05);
+			}
+			.display2:hover #img2{
+				transform: scale(1.05);
+			}
+			.display3:hover #img3{
+				transform: scale(1.05);
+			}
+			.display4:hover #img4{
+				transform: scale(1.05);
+			}
+			.display5:hover #img5{
+				transform: scale(1.05);
+			}
+
+
+      .treat {
+        display: flex;
+				flex-wrap: wrap;
+        margin-top: 60px;
+        justify-content: center;
+      }
+
+			.one , .two{
+				margin:2.5%;
+				width: 44.5%;
+				float: left;
+				height: 1147px;
+								box-shadow: 1px 3px 20px grey;
+			}
+
+			.one{
+				background: url("hospital1.png");
+			}
+			.two{
+				background: url("hospital2.png");
+			}
+			.doctorsmain{
+				width: 80%;
+				margin: auto;
+			}
+			.left{
+				margin: 50px auto;
+				padding: 20px;
+				float: left;
+				height: 800px;
+				width: 45%;
+				background: url('left.png');
+				background-position: 50% 50%;
+				background-size: contain;
+				background-repeat: no-repeat;
+				box-shadow: 1px 3px 20px grey;
+			}
+			.right{
+				margin: 50px auto;
+				padding: 20px;
+				height: 800px;
+				float: right;
+				width: 45%;
+				background: url('right.png');
+				background-position: 50% 50%;
+				background-size: contain;
+				background-repeat: no-repeat;
+				box-shadow: 1px 3px 20px grey;
+			}
+
+		.head a{
+			color:black;
+			text-decoration:none;
+		}
+		.head a:visited{
+			color:black !important;
+			text-decoration:none
+		}
+
+    </style>
+  </head>
+  <body>
+    <div class="containermain">
+    <div class="head">
+        <div class="logo1">
+        </div>
+        <div class="logo2">
+          Meditek
+        </div>
+              <div class="logo3">
+        <a href="/logout">
+        	<div class="logo3-inside">
+          <i class="fas fa-sign-out-alt"></i> Logout
+        </div>
+        </a>
+      </div>
+      <div class="logo3">
+        <a href="/features">
+        	<div class="logo3-inside">
+          <i class="fas fa-table"></i> Features
+        </div>
+        </a>
+      </div>
+      <div class="logo3">
+        <a href="/pastbooking">
+        	<div class="logo3-inside">
+          <i class="fas fa-list-ul"></i> My bookings
+        </div>
+        </a>
+      </div>
+      <div class="logo3">
+        <a>
+        	<div class="logo3-inside">
+          <i class="fas fa-user"></i> Profile
+        </div>
+        </a>
+      </divss
+        <div class="clear">
+
+        </div>
+      </div>
+
+
+          <div class="centered1">MediTek Features</div>
+          <div class="centered2">What Makes Us Different??</div>
+          <div class="bottom-center">
+              <div class="tablinks selectedtab" onclick="function1(event,'treatment')"> <div class="vertical">Treatment</div>  </div>
+              <div class="tablinks" onclick="function1(event,'hospitals')"> <div class="vertical">Hospitals</div>  </div>
+              <div class="tablinks" onclick="function1(event,'doctors')"> <div class="vertical">Doctors</div>  </div>
+              <div class= "clear"></div>
+          </div>
+       </div>
+
+			 <div id="treatment" class="subcontent">
+         <div class="treat">
+					<div class="display1">
+						<p style="text-align: center; font-size: 28px; color: black;">Basic First Aid for Fractures</p>
+
+						<br>
+						<div id="img1">
+						</div>
+						<br>
+						<p>1. Don't try to straighten it.</p>
+						<p>2. Stabilize the limb using a splint and padding to keep it immobile.</p>
+						<p>3. Put a cold pack on the injury, avoiding placing ice directly on the skin.</p>
+						<p>4. Elevate the extremity.</p>
+						<p>5. Give anti-inflammatory drugs like ibuprofen or naproxen.</p>
+					</div>
+
+					<div class="display2">
+						<p style="text-align: center; font-size: 28px; color: black;"> Basic First Aid for Bleeding</p>
+
+						<br>
+						<div id="img2">
+						</div>
+						<br>
+						<p>1. Cover the wound with a gauze or a cloth and apply direct pressure to stop the blood flow. Don't remove the cloth. Add more layers if needed. The cloth will help clots form to stop the flow.</p>
+						<p>2. In most cases, applying a tourniquet may do more damage to the limb than good. The 2010 American Heart Association guidelines also discount the value of elevation and using pressure points.</p>
+					</div>
+
+					<div class="display3">
+						<p style="text-align: center; font-size: 28px; color: black;"> Basic Aid for Cardiac Arrest</p>
+
+							<br>
+						<div id="img3">
+						</div>
+						<br>
+						<p>1. Command someone to call Meditek services or the medical alert system for the locale.</p>
+						<p>2. Immediately start chest compressions regardless of your training. Compress hard and fast in the center of the chest, allowing recoil between compressions. Hand this task over to those who are trained if and when they arrive.</p>
+						<p>3. If you are trained, use chest compressions and rescue breathing.</p>
+						<p>4. An AED should be applied and used. But it is essential not to delay chest compressions, so finding one should be commanded to someone else while you are doing chest compressions.</p>
+					</div>
+
+					<div class="display4">
+						<p style="text-align: center; font-size: 28px; color: black;"> Basic First Aid for Burns</p>
+
+						<br>
+						<div id="img4">
+						</div>
+						<br>
+						<p>1. Flush the burned area with cool running water for several minutes. Do not use ice.</p>
+						<p>2. Apply a light gauze bandage.</p>
+						<p>3. Do not apply ointments, butter, or oily remedies to the burn.</p>
+						<p>4. Take ibuprofen or acetaminophen for pain relief if necessary.</p>
+						<p>5. Do not break any blisters that may have formed.</p>
+					</div>
+
+				<div class="display5">
+					<p style="text-align: center; font-size: 28px; color: black;"> Basic First Aid for Sprains</p>
+						<br>
+					<div id="img5">
+					</div>
+					<br>
+					<p>1. The symptoms of a sprain are almost exactly the same as that of a broken bone. When in doubt, first aid for sprains should be the same as broken bones. Immobilize the limb, apply a cold pack, elevate it, and take anti-inflammatory drugs. See your doctor for further diagnosis and treatment.</p> </ul></p>
+				</div>
+        </div>
+			 </div>
+
+			<div id="hospitals" class="subcontent">
+         <div class="hospitalmain">
+					 <div class="one"></div>
+					 <div class="two"></div>
+				 </div>
+     </div>
+
+		 <div id="doctors" class="subcontent">
+				<div class="doctorsmain">
+					<div class="left"></div>
+					<div class="right"></div>
+				</div>
+		</div>
+
+		<script type="text/javascript">
+
+
+			function function1(event,id){
+        document.getElementsByClassName("tablinks")[0].click();
+         var i, subcontent, sublinks;
+               subcontent = document.getElementsByClassName("subcontent");
+                sublinks = document.getElementsByClassName("tablinks");
+
+
+               for (i = 0; i < subcontent.length; i++) {
+                 subcontent[i].style.display = "none";
+                 }
+
+                 for (i = 0; i < sublinks.length; i++) {
+                   sublinks[i].className = sublinks[i].className.replace(" selectedtab", "");
+                  }
+                  console.log(id);
+                  document.getElementById(id).style.display = "block";
+                  event.currentTarget.className += " selectedtab";
+
+			}
+		</script>
+  </body>
+</html>

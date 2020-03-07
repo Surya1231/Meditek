@@ -1,0 +1,39 @@
+      .head{
+        background-color: transparent;
+        box-shadow: 2px 0 22px grey;
+        height: auto;
+        width: 100%;
+        padding: 10px 30px;
+        overflow: auto;
+        box-sizing: border-box;
+      }
+      .logo1{
+        width: 100px;
+        height: 60px;
+        background: url('logo.png');
+        background-position: 50% 50%;
+        background-size: cover;
+        float: left;
+      }
+      .logo2{
+        height: 30px;
+        float: left;
+        padding: 11px 0 0 10px;
+        font-size: 33px;
+      }
+      .login{
+        background-color: ivory;
+        width: 55%;
+        margin: 50px auto;
+        height: auto;
+        display: flex;
+      }
+      
+      
+      <div class="head">
+        <div class="logo1">
+        </div>
+        <div class="logo2">
+          Meditek
+        </div>
+      </div>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="icon" href="logo.png">
+		<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+		<style media="screen">
+      html{
+        height:100%;
+      }
+			body{
+        background-image: linear-gradient(to top, #505285 0%, #585e92 12%, #65689f 25%, #7474b0 37%, #7e7ebb 50%, #8389c7 62%, #9795d4 75%, #a2a1dc 87%, #b5aee4 100%);
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+				font-family: 'Ubuntu', sans-serif;
+        min-height: 90%;
+			}
+			.main{
+				margin-top: 100px;
+				width: 100%;
+
+			}
+			.main1{
+				text-align: center;
+				overflow: hidden;
+				margin: auto;
+			}
+			.main2{
+				margin-top: 20px;
+				text-align: center;
+				font-size: 35px;
+			}
+
+      .card{
+        width: 70%;
+        float: left;
+        margin: 1%;
+        border: 1px solid #A1A0DC;
+      }
+
+      .card-body{
+        padding:0.50em;
+      }
+
+      .card-body li{
+        margin-top:0;
+        font-size: 1rem;
+      }
+
+      .card img{
+        height: 200px;
+      }
+
+      .container{
+        margin:50px auto;
+        padding-top:40px !important;
+        padding-bottom:40px !important;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        background: white;
+        border-radius: 10px;
+      }
+
+		</style>
+	</head>
+	<body>
+
+    <div class="container row">
+      <div class="col-md-6">
+    			<div class="main1">
+    				<img src="new.gif" alt="">
+    			</div>
+    			<div class="main2">
+    				Thank You for Booking!
+    			</div>
+       </div>
+       <div class="col-md-6">
+
+         <div class="card" >
+             <img class="card-img-top" src="background.jpg" alt="Card image cap">
+             <div class="card-body">
+               <p class="card-text">
+                 <li><b>Ambulance No:-</b> <%= ambulance.vehicle_no %></li>
+                 <li><b>Driver:-</b> <%= ambulance.driver_name %></li>
+                 <li><b>Driver Contact:-</b> <%= ambulance.driver_contact %></li>
+                 <li><b>Wait time:-</b> <%= t %> min</li>
+               </p>
+                 <a class="btn btn-info btn-sm btn-collapsible" href="showinfo2/<%= ambulance._id %>"><i class="fa fa-info"></i> <span> Info</span></a>
+                 <a class="btn btn-success btn-sm btn-collapsible"> <i class="fa fa-edit"></i> <span> Track</span></a>
+                 <a class="btn btn-danger btn-sm btn-collapsible" style="float:right" href="/mainpage"> <i class="fa fa-edit"></i> <span>Back</span></a>
+             </div>
+           </div>
+
+       </div>
+    </div>
+	</body>
+</html>

@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ambulance Booking</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+	<link rel="icon" href="logo.png">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <style media="screen">
+
+		body{
+			padding: 0;
+			margin: 0;
+			box-sizing: border-box;
+			font-family: 'Ubuntu', sans-serif;
+		}
+    .head{
+      background-color: white;
+      box-shadow: 2px 0 22px grey;
+      height: auto;
+      width: 100%;
+      color:black;
+      padding: 10px 30px;
+      overflow: auto;
+      box-sizing: border-box;
+      background: white;
+    }
+    .logo1{
+      width: 100px;
+      height: 60px;
+      background: url('logo.png');
+      background-position: 50% 50%;
+      background-size: cover;
+      float: left;
+    }
+    .logo2{
+      height: 30px;
+      float: left;
+      padding: 11px 0 0 10px;
+      font-size: 33px;
+    }
+    .logo3{
+      cursor: pointer;
+      height: 60px;
+      float: right;
+      font-size: 15px;
+      margin-right: 15px;
+    }
+
+    .logo3-inside{
+      font-size: 18px;
+      position: relative;
+      top: 40%;
+      display:block
+    }
+		.login{
+		  background-color: ivory;
+		  width: 55%;
+		  margin: 50px auto;
+		  height: auto;
+		  display: flex;
+		}
+
+    h1{
+      text-align:center;
+      font-weight:300;
+      font-size:30px;
+      color: black;
+    }
+    h3{
+      text-align:center;
+      font-weight:100;
+      color:#021e3f;
+			font-size: 29px;
+    }
+    h4{
+			color: #555555;
+			line-height: 24px;
+      text-align:center;
+    }
+    button{
+      width:100%;
+      height:45px;
+    }
+    .back{
+      height:800px;
+      background-image:url('amb.jpg');
+      background-repeat:no-repeat;
+      background-size:cover;
+      background-position:50% 50%;
+
+    }
+    input[type="email"]{
+    background-color : #d1d1d1;
+    height:45px;
+  }
+  input[type="email"]::placeholder {
+    /* Firefox, Chrome, Opera */
+    text-align: center;
+  }
+  .boxx{
+    height:auto;
+		width: 550px;
+    margin-top: 50px;
+  }
+  .thumbnail{
+    border:none;
+		padding:0;
+  }
+  .sel img{
+    padding:0;
+    border-radius: 100px;
+		width:120px;
+		height:120px;
+  }
+	.selected img{
+		border:2px solid #123000;
+		background-color:#8ce855;
+		width:120px;
+		height:120px;
+	}
+	.display{
+    background: linear-gradient(to bottom, #e9e9e9, #fcfcfc);
+		height:auto;
+		padding:bottom:20px;
+  }
+  .display img{
+    border-radius:0;
+		padding:0;
+  }
+	.display h3{
+		text-align:left;
+	}
+	.display h4{
+		text-align:left;
+		font-weight:bold;
+	}
+	.display .thumbnail{
+		background: linear-gradient(to bottom, #e9e9e9, #fcfcfc);
+	}
+	.caption{
+		font-weight:bold;
+	}
+	.display a{
+		color:black;
+		opacity:0.8;
+	}
+	.display a:hover{
+		color:orange;
+	}
+	.display p{
+		font-size:18px;
+	}
+	.sel:hover{
+		cursor:pointer;
+	}
+	i{
+		font-size:30px;
+		margin-left:5px;
+		margin-right:5px;
+	}
+	#cnt1{
+		padding-bottom:120px;
+	}
+	.temp1, .temp2{
+		float: left;
+	}
+	.temp1{
+		width: 65%;
+		background-color: transparent;
+	}
+	.temp2{
+		padding-top: 230px;
+		width: 35%;
+	}
+	.dropdown-menu{
+		font-size: 17px;
+		text-align: center;
+		background-color: #f4F4F4;
+		width: 100%;
+	}
+	.dropdown-menu li{
+		padding: 10px;
+	}
+	select{
+		width:100%;
+		text-align:center;
+	}
+	.col-md-8{
+		padding: 80px;
+		height: 450px;
+		line-height: 24px;
+	}
+	.thumbnail{
+		margin-top: 80px;
+	}
+	.img{
+		transition: all .3s;
+	}
+	.img:hover{
+		transform: scale(1.2);
+	}
+	.bottom{
+		height: 80px;
+		background-color: #393939;
+	}
+	.iphone{
+		height: 700px;
+		background: url('iphone.png');
+		background-size: contain;
+		background-position: center;
+	}
+	.bottom-inside{
+		overflow: auto;
+		padding: 20px 0 0 0;
+		width: 45%;
+		margin: auto;
+	}
+	.bottom1, .bottom2, .bottom3{
+		float: left;
+	}
+	.bottom1{
+		text-align: center;
+		padding: 12px;
+		color: white;
+		width: 30%;
+	}
+	.bottom2{
+		width: 50%;
+	}
+	.bottom2-inside{
+		color: white;
+		width: 22%;
+		float: left;
+		text-align: center;
+	}
+	.bottom3{
+		width: 20%;
+	}
+	.bottom3-inside1{
+		height: 35px;
+		width: 30%;
+		float: left;
+		background: url('india.png');
+		background-size: cover;
+		background-position: center;
+	}
+	.bottom3-inside2{
+		padding: 8px;
+		text-align: center;
+		float: right;
+		width: 65%;
+		color: white;
+	}
+  .logo3:hover .fa-sign-out-alt{
+    color: tomato;
+  }
+  .logo3:hover .fa-user {
+    color: dodgerblue;
+  }
+  .logo3:hover .fa-list-ul{
+    color: dodgerblue;
+  }
+  .logo3:hover .fa-table{
+    color: violet;
+  }
+	.head a{
+		color:black;
+		text-decoration:none
+	}
+	.head a:visited{
+		color:black;
+		text-decoration:none
+	}
+  </style>
+</head>
+<body>
+  <div class="head">
+      <div class="logo1">
+      </div>
+      <div class="logo2">
+        Meditek
+      </div>
+      <div class="logo3">
+        <a href="/logout">
+        	<div class="logo3-inside">
+          <i class="fas fa-sign-out-alt"></i> Logout
+        </div>
+        </a>
+      </div>
+      <div class="logo3">
+        <a href="/features">
+        	<div class="logo3-inside">
+          <i class="fas fa-table"></i> Features
+        </div>
+        </a>
+      </div>
+      <div class="logo3">
+        <a href="/pastbooking">
+        	<div class="logo3-inside">
+          <i class="fas fa-list-ul"></i> My bookings
+        </div>
+        </a>
+      </div>
+      <div class="logo3">
+        <a>
+        	<div class="logo3-inside">
+          <i class="fas fa-user"></i> Profile
+        </div>
+        </a>
+      </div>
+      <div class="clear">
+
+      </div>
+    </div>
+  <div class="back">
+
+			<div class="col-md-7">
+
+			</div>
+			<div class="temp">
+				<div class="temp1">
+					helo
+				</div>
+				<div class="temp2">
+					<div class="shadow-lg p-3 mb-5 bg-white rounded boxx col-md-5">
+						<div class="panel panel-info">
+							<div class="panel-body">
+								<h3>Ambulance at your SERVICE!</h3>
+								<br>
+								<form action="/searchambulance" method="POST">
+									<div class="form-group">
+										<input type="text" name="location" placeholder="PICKUP LOCATION" class="form-control" id="email">
+									</div>
+									<div class="dropdown form-group">
+									<!--<button class="btn dropdown-toggle" type="button" data-toggle="dropdown">Select nearest Hospitals-->
+									<!--<span class="caret"></span></button>-->
+									<!--<ul class="dropdown-menu">-->
+									<!--	<li>APEX Hospital</li>-->
+									<!--	<li>WockHart Hospital</li>-->
+									<!--	<li>Fortis Hospital</li>-->
+									<!--	<li>Jaipur Hospital</li>-->
+									<!--	<li>Apollo Hospital</li>-->
+									<!--</ul>-->
+									<select name="destination" class="browser-default custom-select" searchable="Search here..">
+			                          <option  value="APEX Hospital">APEX Hospital</option>
+			                          <option value="WockHart Hospital">WockHart Hospital</option>
+			                          <option value="Fortis Hospital">Fortis Hospital</option>
+			                          <option value="Apollo Hospital">Apollo Hospital</option>
+			                          <option value="Jaipur Hospital">Jaipur Hospital</option>
+			                      </select>
+								</div>
+									<div class="form-group">
+										<button type="submit" class="btn btn-success" name="button">SEARCH AMBULANCE</button>
+									</div>
+								</form>
+							</div>
+				</div>
+					</div>
+				</div>
+			</div>
+    </div>
+
+  <div class="container">
+		<h1>MEDITEK Ambulance Services</h1>
+		<hr style="color: red;" size="10px">
+		<br>
+    <div class="ambulances">
+      <div id="op1" class="col-md-2 sel selected" onclick="show1()">
+        <div class="thumbnail">
+					<div class="img">
+          <img src="basicambulance.png">
+					</div>
+          <div class="caption">
+            <h4>Basic Life Support Ambulance</h4>
+          </div>
+        </div>
+      </div>
+      <div id="op2" class="col-md-2 sel" onclick="show2()">
+        <div class="thumbnail">
+					<div class="img">
+						<img src="advanceambulance.png" alt="">
+					</div>
+          <div class="caption">
+            <h4>Advanced Life Support Ambulance</h4>
+          </div>
+        </div>
+      </div>
+      <div id="op3" class="col-md-2 sel" onclick="show3()">
+        <div class="thumbnail">
+					<div class="img">
+						<img src="neo.png" width="10" height="10p">
+					</div>
+
+          <div class="caption">
+            <h4>Neonatal Ambulance</h4>
+          </div>
+        </div>
+      </div>
+      <div id="op4" class="col-md-2 sel" onclick="show4()">
+        <div class="thumbnail">
+					<div class="img">
+						<img src="patientambulance.png" alt="">
+					</div>
+
+          <div class="caption">
+            <h4>Patient Transport Vehicle</h4>
+          </div>
+        </div>
+      </div>
+      <div id="op5" class="col-md-2 sel" onclick="show5()">
+        <div class="thumbnail">
+					<div class="img">
+						<img src="mortuary.png" alt="">
+					</div>
+
+          <div class="caption">
+            <h4>Mortuary Ambulance</h4>
+          </div>
+        </div>
+      </div>
+      <div id="op6" class="col-md-2 sel" onclick="show6()">
+        <div class="thumbnail">
+					<div class="img">
+						<img src="airambulance.png" alt="">
+					</div>
+
+          <div class="caption">
+            <h4>Air Ambulance</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+	<div class="display">
+		<div class="container">
+			<br>
+			<div id="cnt1">
+	      <div class="col-md-4">
+	        <div class="thumbnail">
+	          <img src="basic.jpg">
+	        </div>
+	      </div>
+	      <div class="col-md-8">
+					<h3>Basic Life Support Ambulance</h3>
+					<h4>For patients who are clinically stable /non critical .</h4>
+					<p>These types of ambulances are used for diagnostic transfers or, transfers of stable patients after discharge. Only basic equipment like BP machine, Pulse Oxymetry, Oxygen delivery devices, AED are available with cabin crew (patient attendant and a nurse).</p>
+					<h4>KEY FEATURES:  </h4>
+					<ul class="list-inline">
+						<li><a href="#" data-toggle="tooltip" title="patient attendant and a nurse"><i class="fas fa-user-nurse"></i></a></li>
+						<li><a href="#" data-toggle="tooltip" title="BP machine, Pulse Oxymetry, Oxygen delivery devices"><i class="fas fa-stethoscope"></i></a></li>
+					</ul>
+				</div>
+	    </div>
+			<div id="cnt2" style="display:none;">
+				<br>
+	      <div class="col-md-4">
+	        <div class="thumbnail">
+	          <img src="advance.jpg" alt="">
+	        </div>
+	      </div>
+	      <div class="col-md-8">
+					<h3>Advanced Life Support Ambulance</h3>
+					<h4>Used to transfer clinically critical patients requiring ventilator support, constant monitoring of ECG/BP/respiratory rate</h4>
+					<p>These ambulances are equipped with Ventilator, Multipara monitors, Defibrillator, Syringe pump and Pacemakers. Doctor and nurses provided on-board.</p>
+					<h4>KEY FEATURES:  </h4>
+					<ul class="list-inline">
+						<li><a href="#" data-toggle="tooltip" title="patient attendant and a nurse"><i class="fas fa-user-nurse"></i></a></li>
+						<li><a href="#" data-toggle="tooltip" title="Doctor on board"><i class="fas fa-user-md"></i></a></li>
+						<li><a href="#" data-toggle="tooltip" title="Ventilators and Defibrillator"><i class="fas fa-procedures"></i></a></li>
+						<li><a href="#" data-toggle="tooltip" title="Multipara monitors"><i class="fas fa-laptop-medical"></i></a></li>
+						<li><a href="#" data-toggle="tooltip" title="BP machine, Pulse Oxymetry, Oxygen delivery devices"><i class="fas fa-stethoscope"></i></a></li>
+						<li><a href="#" data-toggle="tooltip" title="Syringe Pumps"><i class="fas fa-syringe"></i></a></li>
+					</ul>
+	      </div>
+	    </div>
+			<div id="cnt3" style="display:none;">
+				<br>
+	      <div class="col-md-4">
+	        <div class="thumbnail">
+	          <img src="neo.jpg" alt="">
+	        </div>
+	      </div>
+	      <div class="col-md-8">
+					<h3>Neonatal Ambulance</h3>
+					<h4>Equipped to transfer critically ill new born child (Neonate-Newly born/less than 30 days of age).</h4>
+					<p>Special equipments like Transport incubator, Neonatal ventilator, etc included to ensure that babies can be moved quickly for the right care in the right place for their needs.</p>
+					<h4>KEY FEATURES:  </h4>
+					<ul class="list-inline">
+						<li><a href="#" data-toggle="tooltip" title="Patient attendant and a nurse"><i class="fas fa-user-nurse"></i></a></li>
+						<li><a href="#" data-toggle="tooltip" title="Doctor on board"><i class="fas fa-user-md"></i></a></li>
+						<li><a href="#" data-toggle="tooltip" title="Neonantal Ventilators"><i class="fas fa-procedures"></i></a></li>
+						<li><a href="#" data-toggle="tooltip" title="Multipara monitors"><i class="fas fa-laptop-medical"></i></a></li>
+					</ul>
+	      </div>
+	    </div>
+			<div id="cnt4" style="display:none;">
+				<br>
+	      <div class="col-md-4">
+	        <div class="thumbnail">
+	          <img src="patient.jpg" alt="">
+	        </div>
+	      </div>
+	      <div class="col-md-8">
+					<h3>Patient Transport Vehicle</h3>
+					<h4>PTV is a non emergency patient transport vehicle equipped with patient bed & other life-support devices.</h4>
+					<h4>KEY FEATURES:  </h4>
+					<ul class="list-inline">
+						<li><a href="#" data-toggle="tooltip" title="patient attendant and a nurse"><i class="fas fa-user-nurse"></i></a></li>
+						<li><a href="#" data-toggle="tooltip" title="Patient beds and Defibrillator"><i class="fas fa-procedures"></i></a></li>
+						<li><a href="#" data-toggle="tooltip" title="BP machine, Pulse Oxymetry, Oxygen delivery devices"><i class="fas fa-stethoscope"></i></a></li>
+						<li><a href="#" data-toggle="tooltip" title="Syringe Pumps"><i class="fas fa-syringe"></i></a></li>
+					</ul>
+	      </div>
+	    </div>
+			<div id="cnt5" style="display:none;">
+				<br>
+	      <div class="col-md-4">
+	        <div class="thumbnail">
+	          <img src="morturary.jpg">
+	        </div>
+	      </div>
+	      <div class="col-md-8">
+					<h3>Mortuary Ambulance</h3>
+					<h4>Exclusively used for dead body transfers.</h4>
+					<p>Equipped with freezer to prevent putrefaction/decomposition of dead body.</p>
+	      </div>
+	    </div>
+			<div id="cnt6" style="display:none;">
+				<br>
+	      <div class="col-md-4">
+	        <div class="thumbnail">
+	          <img src="air.jpg" alt="">
+	        </div>
+	      </div>
+	      <div class="col-md-8">
+					<h3>Air Ambulance</h3>
+					<h4>These are dedicated air ambulances designed to transfer critically ill patients requiring ventilator, cardiac monitoring, etc. </h4>
+					<p>Air ambulances contain ventilators, defibrillators, infusion pumps, balloon pumps, oxygen cylinders, trained doctors, & nurses.</p>
+					<h4>KEY FEATURES:  </h4>
+					<ul class="list-inline">
+						<li><a href="#" data-toggle="tooltip" title="patient attendant and a nurse"><i class="fas fa-user-nurse"></i></a></li>
+						<li><a href="#" data-toggle="tooltip" title="Doctor on board"><i class="fas fa-user-md"></i></a></li>
+						<li><a href="#" data-toggle="tooltip" title="Ventilators and Defibrillator"><i class="fas fa-procedures"></i></a></li>
+						<li><a href="#" data-toggle="tooltip" title="Multipara monitors"><i class="fas fa-laptop-medical"></i></a></li>
+						<li><a href="#" data-toggle="tooltip" title="BP machine, Pulse Oxymetry, Oxygen delivery devices"><i class="fas fa-stethoscope"></i></a></li>
+						<li><a href="#" data-toggle="tooltip" title="Syringe Pumps"><i class="fas fa-syringe"></i></a></li>
+					</ul>
+				</div>
+	    </div>
+		</div>
+	</div>
+	<hr>
+	<hr>
+	<div class="iphone">
+	</div>
+	<div class="bottom">
+		<div class="bottom-inside">
+			<div class="bottom1">
+				Social Links
+			</div>
+			<div class="bottom2">
+				<div class="bottom2-inside">
+					<i class="fab fa-facebook-f"></i>
+				</div>
+				<div class="bottom2-inside">
+					<i class="fab fa-instagram"></i>
+				</div>
+				<div class="bottom2-inside">
+					<i class="fab fa-youtube"></i>
+				</div>
+				<div class="bottom2-inside">
+					<i class="fab fa-twitter"></i>
+				</div>
+			</div>
+			<div class="bottom3">
+				<div class="bottom3-inside1">
+
+				</div>
+				<div class="bottom3-inside2">
+					India
+				</div>
+			</div>
+		</div>
+	</div>
+<script type="text/javascript">
+	function show1(){
+		document.getElementById("cnt1").style.display="block";
+		document.getElementById("cnt2").style.display="none";
+		document.getElementById("cnt3").style.display="none";
+		document.getElementById("cnt4").style.display="none";
+		document.getElementById("cnt5").style.display="none";
+		document.getElementById("cnt6").style.display="none";
+
+		document.getElementById("op1").classList.add("selected");
+		document.getElementById("op2").classList.remove("selected");
+		document.getElementById("op3").classList.remove("selected");
+		document.getElementById("op4").classList.remove("selected");
+		document.getElementById("op5").classList.remove("selected");
+		document.getElementById("op6").classList.remove("selected");
+	}
+	function show2(){
+		document.getElementById("cnt2").style.display="block";
+		document.getElementById("cnt1").style.display="none";
+		document.getElementById("cnt3").style.display="none";
+		document.getElementById("cnt4").style.display="none";
+		document.getElementById("cnt5").style.display="none";
+		document.getElementById("cnt6").style.display="none";
+
+		document.getElementById("op2").classList.add("selected");
+		document.getElementById("op1").classList.remove("selected");
+		document.getElementById("op3").classList.remove("selected");
+		document.getElementById("op4").classList.remove("selected");
+		document.getElementById("op5").classList.remove("selected");
+		document.getElementById("op6").classList.remove("selected");
+	}
+	function show3(){
+		document.getElementById("cnt3").style.display="block";
+		document.getElementById("cnt1").style.display="none";
+		document.getElementById("cnt2").style.display="none";
+		document.getElementById("cnt4").style.display="none";
+		document.getElementById("cnt5").style.display="none";
+		document.getElementById("cnt6").style.display="none";
+
+		document.getElementById("op3").classList.add("selected");
+		document.getElementById("op2").classList.remove("selected");
+		document.getElementById("op1").classList.remove("selected");
+		document.getElementById("op4").classList.remove("selected");
+		document.getElementById("op5").classList.remove("selected");
+		document.getElementById("op6").classList.remove("selected");
+	}
+	function show4(){
+		document.getElementById("cnt4").style.display="block";
+		document.getElementById("cnt1").style.display="none";
+		document.getElementById("cnt3").style.display="none";
+		document.getElementById("cnt2").style.display="none";
+		document.getElementById("cnt5").style.display="none";
+		document.getElementById("cnt6").style.display="none";
+
+		document.getElementById("op4").classList.add("selected");
+		document.getElementById("op2").classList.remove("selected");
+		document.getElementById("op3").classList.remove("selected");
+		document.getElementById("op1").classList.remove("selected");
+		document.getElementById("op5").classList.remove("selected");
+		document.getElementById("op6").classList.remove("selected");
+	}
+	function show5(){
+		document.getElementById("cnt5").style.display="block";
+		document.getElementById("cnt1").style.display="none";
+		document.getElementById("cnt3").style.display="none";
+		document.getElementById("cnt4").style.display="none";
+		document.getElementById("cnt2").style.display="none";
+		document.getElementById("cnt6").style.display="none";
+
+		document.getElementById("op5").classList.add("selected");
+		document.getElementById("op2").classList.remove("selected");
+		document.getElementById("op3").classList.remove("selected");
+		document.getElementById("op4").classList.remove("selected");
+		document.getElementById("op1").classList.remove("selected");
+		document.getElementById("op6").classList.remove("selected");
+	}
+	function show6(){
+		document.getElementById("cnt6").style.display="block";
+		document.getElementById("cnt1").style.display="none";
+		document.getElementById("cnt3").style.display="none";
+		document.getElementById("cnt4").style.display="none";
+		document.getElementById("cnt5").style.display="none";
+		document.getElementById("cnt2").style.display="none";
+
+		document.getElementById("op6").classList.add("selected");
+		document.getElementById("op2").classList.remove("selected");
+		document.getElementById("op3").classList.remove("selected");
+		document.getElementById("op4").classList.remove("selected");
+		document.getElementById("op5").classList.remove("selected");
+		document.getElementById("op1").classList.remove("selected");
+	}
+</script>
+</body>
+</html>

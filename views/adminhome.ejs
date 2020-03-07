@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Meditek Admin</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="icon" href="logo.png">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+
+    <style media="screen">
+
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h3>Meditek Admin</h3>
+            </div>
+
+            <ul class="list-unstyled components">
+                <p><i class="fas fa-user-tie"></i> Hello Admin</p>
+                <li class="tablinks active" onclick="show(event, 'Overview') ">
+
+                    <a href="#"><i class="fas fa-eye"></i> Overview </a>
+                </li>
+                <li class="tablinks" onclick="show(event,'Ambulances')">
+
+                    <a href="#"> <i class="fas fa-ambulance"></i> Ambulances</a>
+                </li>
+                <li class="tablinks" onclick="show(event,'Available')">
+                    <a href="#"><i class="fab fa-adn"></i> Available</a>
+                </li>
+                <li class="tablinks" onclick="show(event,'Engagged')">
+                    <a href="#"><i class="fas fa-medkit"></i> Engagged</a>
+                </li>
+                <li class="tablinks" onclick="show(event,'Feedback')">
+                    <a href="#"><i class="fas fa-comments"></i> Feedback</a>
+                </li>
+                <li  class="tablinks" onclick="show(event,'Setting')">
+                    <a href="#"><i class="fas fa-wrench"></i> Setting</a>
+                </li>
+            </ul>
+
+            <ul class="list-unstyled CTAs">
+                <li>
+                    <form action="/adminlogout" method="POST">
+                      <button type="submit" class="btn btn-danger btn-lg">LOGOUT</button>
+                    </form>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Page Content  -->
+        <div id="content">
+
+          <div class="subcontent active" id="Overview">
+              <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                  <div class="container-fluid">
+
+                      <button type="button"  class="btn btn-info sidebarCollapse">
+                          <i class="fas fa-align-left"></i>
+                      </button>
+
+
+
+
+                  </div>
+              </nav>
+
+              <div class="container overview">
+
+                    		<div class="row">
+                    			<div class="box col-md-6">
+                    			<h3>AVAILABLE AMBULANCES STATS-</h3>
+                    			<p>Basic Life Support Ambulance : 7</p>
+                    			<p>Advanced Life Support Ambulance : 15</p>
+                    			<p>Neonatal Ambulance : 20</p>
+                    			<p>Patient Transport Vehicle : 12</p>
+                    			<p>Mortuary Ambulance : 6</p>
+                    			<p>Air Ambulance : 17</p>
+                    		</div>
+                    		<div class="col-md-1"></div>
+                    		<div class="box2 col-md-5">
+
+                    		</div>
+                    		</div>
+                    		<hr>
+                    		<br>
+                    		<div class="row">
+                    			<div class="box3 col-md-5">
+
+                    			</div>
+                    			<div class="col-md-1"></div>
+                    			<div class="box col-md-6">
+                    				<h3>ENGAGED AMBULANCES STATS-</h3>
+                    				<p>Basic Life Support Ambulance : 7</p>
+                    				<p>Advanced Life Support Ambulance : 15</p>
+                    				<p>Neonatal Ambulance : 20</p>
+                    				<p>Patient Transport Vehicle : 12</p>
+                    				<p>Mortuary Ambulance : 6</p>
+                    				<p>Air Ambulance : 17</p>
+                    			</div>
+                    		</div>
+                    	</div>
+
+          </div>
+
+          <div class="subcontent" id="Ambulances">
+              <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                  <div class="container-fluid">
+
+                      <button type="button"  class="btn btn-info sidebarCollapse">
+                          <i class="fas fa-align-left"></i>
+                      </button>
+                    <form action="/applyfilter" method="post">
+                      <select name="type" class="browser-default custom-select" searchable="Search here..">
+                          <option value="" selected>Choose Filter</option>
+                          <option value="all">All</option>
+                          <option  value="Basic Life Support Ambulance">Basic Life Support Ambulance</option>
+                          <option value="Advanced Life Support Ambulance">Advanced Life Support Ambulance</option>
+                          <option value="Neonatal Ambulance">Neonatal Ambulance</option>
+                          <option value="Air Ambulance">Air Ambulance</option>
+                          <option value="Patient Transport Vehicle">Patient Transport Vehicle</option>
+                          <option value="Mortuary Ambulance">Mortuary Ambulance</option>
+                      </select>
+
+                      <button type="submit"  class="btn btn-info">
+                          Apply
+                      </button>
+
+                      </form>
+
+
+                  </div>
+              </nav>
+                <%  ambulances.forEach(function(ambulance){ %>
+                <div class="outercard col-md-3">
+                  <div class="card">
+                      <img class="card-img-top" src="background.jpg" alt="Card image cap">
+                      <div class="card-body">
+                        <p class="card-text">
+                          <li class="litype"><b>Registration no.:</b><%= (ambulance.vehicle_no) %></li>
+                          <li class="litype"><b>Type:-</b><%=(ambulance.type)%></li>
+                          <li><b>Status:-</b><%=(ambulance.status)%></li>
+                          <li class="litype"><b>Driver:-</b><%=(ambulance.driver_name)%></li>
+                        </p>
+                          <a class="btn btn-info btn-sm btn-collapsible"  href="/showambulanceinfo/<%=ambulance._id%>" ><i class="fa fa-info"></i> <span> Info</span></a>
+                          <a class="btn btn-success btn-sm btn-collapsible" href="/editambulanceinfo/<%=ambulance._id%>"> <i class="fa fa-edit"></i> <span> Edit</span></a>
+                      </div>
+                    </div>
+                 </div>
+                <% }); %>
+
+
+          </div>
+
+
+          <div class="subcontent" id="Available">
+              <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                  <div class="container-fluid">
+
+                      <button type="button"  class="btn btn-info sidebarCollapse">
+                          <i class="fas fa-align-left"></i>
+                      </button>
+
+                      <form action="/applyfilter" method="post">
+                      <select name="type" class="browser-default custom-select" searchable="Search here..">
+                          <option value="" selected>Choose Filter</option>
+                          <option value="all" >All</option>
+                          <option  value="Basic Life Support Ambulance">Basic Life Support Ambulance</option>
+                          <option value="Advanced Life Support Ambulance">Advanced Life Support Ambulance</option>
+                          <option value="Neonatal Ambulance">Neonatal Ambulance</option>
+                          <option value="Air Ambulance">Air Ambulance</option>
+                          <option value="Patient Transport Vehicle">Patient Transport Vehicle</option>
+                          <option value="Mortuary Ambulance">Mortuary Ambulance</option>
+                      </select>
+
+                      <button type="submit"  class="btn btn-info">
+                          Apply
+                      </button>
+
+                      </form>
+
+                  </div>
+              </nav>
+
+              <% ambulances.forEach(function(ambulance){ if(ambulance.status=="Available"){ %>
+                <div class="outercard col-md-3">
+                  <div class="card">
+                      <img class="card-img-top" src="background.jpg" alt="Card image cap">
+                      <div class="card-body">
+                        <p class="card-text">
+                          <li class="litype"><b>Registration no.:</b><%= (ambulance.vehicle_no) %></li>
+                          <li class="litype"><b>Type:-</b><%=(ambulance.type)%></li>
+                          <li><b>Status:-</b><%=(ambulance.status)%></li>
+                          <li class="litype"><b>Driver:-</b><%=(ambulance.driver_name)%></li>
+                        </p>
+                          <a class="btn btn-info btn-sm btn-collapsible" href="/showambulanceinfo/<%=ambulance._id%>"><i class="fa fa-info"></i> <span> Info</span></a>
+                          <a class="btn btn-success btn-sm btn-collapsible" href="/editambulanceinfo/<%=ambulance._id%>"> <i class="fa fa-edit"></i> <span> Edit</span></a>
+                      </div>
+                    </div>
+                 </div>
+                                  <% }}); %>
+          </div>
+
+          <div class="subcontent" id="Engagged">
+              <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                  <div class="container-fluid">
+
+                      <button type="button"  class="btn btn-info sidebarCollapse">
+                          <i class="fas fa-align-left"></i>
+                      </button>
+
+                      <form action="/applyfilter" method="post">
+                      <select name="type" class="browser-default custom-select" searchable="Search here..">
+                          <option value="" selected>Choose Filter</option>
+                          <option value="all">All</option>
+                          <option  value="Basic Life Support Ambulance">Basic Life Support Ambulance</option>
+                          <option value="Advanced Life Support Ambulance">Advanced Life Support Ambulance</option>
+                          <option value="Neonatal Ambulance">Neonatal Ambulance</option>
+                          <option value="Air Ambulance">Air Ambulance</option>
+                          <option value="Patient Transport Vehicle">Patient Transport Vehicle</option>
+                          <option value="Mortuary Ambulance">Mortuary Ambulance</option>
+                      </select>
+
+                      <button type="submit"  class="btn btn-info">
+                          Apply
+                      </button>
+
+                      </form>
+
+
+                  </div>
+              </nav>
+
+              <% ambulances.forEach(function(ambulance){ if(ambulance.status=="Engaged"){ %>
+                <div class="outercard col-md-3">
+                  <div class="card">
+                      <img class="card-img-top" src="background.jpg" alt="Card image cap">
+                      <div class="card-body">
+                        <p class="card-text">
+                          <li class="litype"><b>Registration no.:</b><%= (ambulance.vehicle_no) %></li>
+                          <li class="litype"><b>Type:-</b><%=(ambulance.type)%></li>
+                          <li><b>Status:-</b><%=(ambulance.status)%></li>
+                          <li class="litype"><b>Driver:-</b><%=(ambulance.driver_name)%></li>
+                        </p>
+                          <a class="btn btn-info btn-sm btn-collapsible" href="/showambulanceinfo/<%=ambulance._id%>" ><i class="fa fa-info"></i> <span> Info</span></a>
+                          <a class="btn btn-success btn-sm btn-collapsible" href="/editambulanceinfo/<%=ambulance._id%>"> <i class="fa fa-edit"></i> <span> Edit</span></a>
+                      </div>
+                    </div>
+                 </div>
+
+
+
+
+
+
+
+
+
+                <%}}); %>
+          </div>
+
+
+
+          <div class="subcontent" id="Feedback">
+              <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                  <div class="container-fluid">
+
+                      <button type="button"  class="btn btn-info sidebarCollapse">
+                          <i class="fas fa-align-left"></i>
+                      </button>
+
+                  </div>
+              </nav>
+
+             <% feedbacks.forEach(function(feedback){ i++;  %>
+              <div class="list-groupp">
+        		    <div onclick="showfeedback(<%="feedback"+i%>)" class="list-group-iteem" style="text-transform:uppercase;"><i class="fas fa-user-tie" style="float:left margin-right:20px"></i> <%=feedback.full_name%><i class="fas fa-caret-down" style="float:right"></i>
+
+                  <div class="clear"></div>
+                  <div class="hide hiddd" id=<%='feedback'+i%> > <hr > <%=feedback.message%>
+                   <button class="btn btn-primary button btn-sm" style="float:right">Resolved</button></div> </div> </div>
+
+        	<% }); %>
+
+          </div>
+
+          <div class="subcontent" id="Setting">
+              <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                  <div class="container-fluid">
+
+                      <button type="button"  class="btn btn-info sidebarCollapse">
+                          <i class="fas fa-align-left"></i>
+                      </button>
+                      <button type="button"  class="btn btn-info">
+                          Admin Profile
+                      </button>
+
+                  </div>
+              </nav>
+              <div class="addnewmember">
+                    <h1>ADD NEW AMBULANCE</h1>
+                    <form action="/newambulance" method="post">
+                      <div class="form-row">
+                        <div class="form-group col-md-12">
+                          <label for="Type">Type</label>
+                          <select id="Type"  name="type" class="form-control">
+                            <option selected disabled>Choose Your Vehicle Type</option>
+                           <option value="" selected>Choose Filter</option>
+                          <option value="Basic Life Support Ambulance">Basic Life Support Ambulance</option>
+                          <option value="Advanced Life Support Ambulance">Advanced Life Support Ambulance</option>
+                          <option value="Neonatal Ambulance">Neonatal Ambulance</option>
+                          <option value="Air Ambulance">Air Ambulance</option>
+                          <option value="Patient Transport Vehicle">Patient Transport Vehicle</option>
+                          <option value="Mortuary Ambulance">Mortuary Ambulance</option>
+                          </select>
+                        </div>
+                      </div>
+
+                      <div class="form-row">
+                        <div class="form-group col-md-6">
+                          <label for="DriverName">Driver Name</label>
+                          <input type="text" class="form-control" name="dname" id="DriverName" placeholder="Driver Name">
+                        </div>
+                        <div class="form-group col-md-6">
+                          <label for="mobile">Mobile No</label>
+                          <input type="text" class="form-control" name="dcont" id="mobile" placeholder="mobile">
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="inputAddress">Address</label>
+                        <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" name="dadd">
+                      </div>
+
+                      <div class="form-row">
+                        <div class="form-group col-md-6">
+                          <label for="inputCity">City</label>
+                          <input type="text" class="form-control" id="inputCity" name="city">
+                        </div>
+                        <div class="form-group col-md-4">
+                          <label for="inputState">State</label>
+                          <input type="text" class="form-control" id="inputState" name="state">
+                        </div>
+                        <div class="form-group col-md-2">
+                          <label for="inputZip">Zip</label>
+                          <input type="text" class="form-control" id="inputZip" name="zip">
+                        </div>
+                      </div>
+                      <div class="form-row">
+                          <div class="form-group col-md-6">
+                            <label for="inputVehicleNo">Vehicle No</label>
+                            <input type="text" class="form-control" id="inputVehicleNo" name="vno" placeholder="Vehicle NO">
+                          </div>
+
+                          <div class="form-group col-md-6">
+                            <label for="inputInsuranceNo">Insurance No</label>
+                            <input type="text" class="form-control" id="inputInsuranceNo" name="insuranceno" >
+                          </div>
+
+                      </div>
+                      <button type="submit" class="btn btn-primary">Register</button>
+                    </form>
+                </div>
+            </div>
+       </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#sidebar").mCustomScrollbar({
+                theme: "minimal"
+            });
+
+            $('.sidebarCollapse').on('click', function () {
+                $('#sidebar, #content').toggleClass('active');
+                $('.collapse.in').toggleClass('in');
+                $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+            });
+        });
+
+    </script>
+
+    <script type="text/javascript">
+              sub = document.getElementsByClassName("tablinks");
+              sub[<%=active%>].click();
+
+              function show(eve,idt){
+                var i, subcontent, sublinks;
+               subcontent = document.getElementsByClassName("subcontent");
+                sublinks = document.getElementsByClassName("tablinks");
+
+
+               for (i = 0; i < subcontent.length; i++) {
+                 subcontent[i].className = subcontent[i].className.replace(" active", "");  }
+
+                 for (i = 0; i < sublinks.length; i++) {
+                   sublinks[i].className = sublinks[i].className.replace(" active", "");
+                  }
+                  console.log(idt);
+                  document.getElementById(idt).className += " active";
+                  eve.currentTarget.className += " active";
+                  }
+
+              function showfeedback(id){
+                console.log(id.id);
+                document.getElementById(id.id).classList.toggle("hiddd");
+              }
+
+
+              function showinfo(id){
+                  console.log(id);
+                  a = document.getElementsByClass("outercard");
+                  for(var i = 0 ; i<a.length; i++)
+                  a[i].style.display = "none";
+
+                  b = document.getElemntById(id);
+                  b.style.display = "block";
+              }
+
+
+    </script>
+</body>
+
+</html>

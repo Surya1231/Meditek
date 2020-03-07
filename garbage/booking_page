@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Booking</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+	<link rel="stylesheet" type="text/css" href="https://tympanus.net/Development/ProgressButtonStyles/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" href="https://tympanus.net/Development/ProgressButtonStyles/css/demo.css" />
+	<link rel="stylesheet" type="text/css" href="https://tympanus.net/Development/ProgressButtonStyles/css/component.css" />
+	<script src="https://tympanus.net/Development/ProgressButtonStyles/js/modernizr.custom.js"></script>
+
+	<script type="text/javascript">
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount', 'UA-7243260-2']);
+	_gaq.push(['_trackPageview']);
+	(function() {
+	var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	})();
+	</script>
+
+  <style media="screen">
+    body{
+      background-color:white;
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+      font-family: 'Ubuntu', sans-serif;
+    }
+    .head{
+      background-color: transparent;
+      box-shadow: 2px 0 22px grey;
+      height: auto;
+      width: 100%;
+      padding: 10px 30px;
+      overflow: auto;
+      box-sizing: border-box;
+    }
+    .logo1{
+      width: 100px;
+      height: 60px;
+      background: url('logo.png');
+      background-position: 50% 50%;
+      background-size: cover;
+      float: left;
+    }
+    .logo2{
+      height: 30px;
+      float: left;
+      padding: 11px 0 0 10px;
+      font-size: 33px;
+			color: black;
+    }
+    .main{
+      width: 60%;
+      margin: 40px auto;
+      overflow: auto;
+    }
+    .heading{
+      text-align: center;
+      width: 100%;
+      font-size: 38px;
+      font-weight: 500;
+      color: #555555;
+    }
+    .booking{
+      margin: 20px auto;
+      width: 55%;
+      text-align: center;
+    }
+    .from, .to{
+      width: 50%;
+      float: left;
+    }
+    .group {
+      position:relative;
+      float: left;
+    }
+    input {
+      background-color: #E2E2E2;
+      font-size:18px;
+      padding:10px 10px 10px 5px;
+      display:block;
+      width:300px;
+      border:none;
+      border-top-left-radius: 5px;
+			border-top-right-radius: 5px;
+    }
+    input:focus {
+     outline:none; }
+
+    label                {
+      color:#999;
+      font-size:18px;
+      font-weight:normal;
+      position:absolute;
+      pointer-events:none;
+      left:5px;
+      top:10px;
+      transition:0.2s ease all;
+    }
+
+    input:focus ~ label, input:valid ~ label        {
+      top:-20px;
+      font-size:14px;
+      color:#5264AE;
+    }
+
+    .bar    { position:relative; display:block; width:300px; }
+    .bar:before, .bar:after     {
+      content:'';
+      height:2px;
+      width:0;
+      bottom:1px;
+      position:absolute;
+      background:#5264AE;
+      transition:0.2s ease all;
+    }
+    .bar:before {
+      left:50%;
+    }
+    .bar:after {
+      right:50%;
+    }
+
+    input:focus ~ .bar:before, input:focus ~ .bar:after {
+      width:50%;
+    }
+
+    .highlight {
+      position:absolute;
+      height:60%;
+      width:100px;
+      top:25%;
+      left:0;
+      pointer-events:none;
+      opacity:0.5;
+    }
+
+    input:focus ~ .highlight {
+      -webkit-animation:inputHighlighter 0.3s ease;
+      -moz-animation:inputHighlighter 0.3s ease;
+      animation:inputHighlighter 0.3s ease;
+    }
+
+    @-webkit-keyframes inputHighlighter {
+        from { background:#5264AE; }
+      to    { width:0; background:transparent; }
+    }
+    @-moz-keyframes inputHighlighter {
+        from { background:#5264AE; }
+      to    { width:0; background:transparent; }
+    }
+    @keyframes inputHighlighter {
+        from { background:#5264AE; }
+      to    { width:0; background:transparent; }
+    }
+
+    .ambulances{
+      width: 100%;
+      padding: 50px 20px;
+      overflow: auto;
+    }
+    .inside{
+      border-radius: 8px;
+      margin-bottom: 40px;
+      overflow: none;
+      width: 100%;
+      height: 90px;
+      box-shadow: 0 5px 22px grey, 0 -5px 22px lightgrey;
+    }
+    .left1, .left2, .left3, .left4, .left5, .left6{
+      width: 9%;
+      float: left;
+      background-size: cover;
+      background-position: 50% 50%;
+      height: 80px;
+    }
+    .left1{
+      background: url('basicambulance.png');
+    }
+    .left2{
+      background: url('advanceambulance.png');
+    }
+    .left3{
+      background: url('mortuary.png');
+    }
+    .left4{
+      background: url('patientambulance.png');
+    }
+    .left5{
+      background: url('airambulance.png');
+    }
+    .right{
+      width: 90%;
+      float: left;
+      padding: 15px 30px;
+    }
+    .right1, .right2, .right3{
+      text-align: center;
+      width: 33.33%;
+      float: left;
+    }
+    .right1{
+      font-size: 23px;
+      color: #555555;
+      font-weight: 300;
+			padding: 15px 1px;
+    }
+    .right2{
+      color: #777;
+      font-size: 19px;
+			padding: 17px;
+    }
+    .button{
+           display: block;
+           text-align: center;
+           font-size: 18px;
+           margin: auto;
+           padding: 4px 30px;
+           background-color: #31B9F5;
+           border: 0;
+           border-radius: 5px;
+           cursor: pointer;
+           transition: all .5s;
+         }
+         .button span {
+           cursor: pointer;
+           display: inline-block;
+           position: relative;
+           transition: 0.5s;
+         }
+
+         .button span:after {
+           content: '\00bb';
+           position: absolute;
+           opacity: 0;
+           top: 0;
+           right: -20px;
+           transition: 0.5s;
+         }
+
+         .button:hover span {
+           padding-right: 25px;
+         }
+
+         .button:hover span:after {
+           opacity: 1;
+           right: 0;
+         }
+  </style>
+  </head>
+
+  <body>
+
+  <div class="head">
+    <div class="logo1">
+    </div>
+    <div class="logo2">
+      Meditek
+    </div>
+  </div>
+
+  <div class="main">
+    <div class="heading">
+      Available Ambulances
+    </div>
+    <hr>
+
+    <div class="booking">
+      <div class="from">
+
+        <form>
+
+          <div class="group">
+            <input type="text" required>
+            <span class="highlight"></span>
+            <span class="bar"></span>
+            <label>From</label>
+          </div>
+
+        </form>
+
+      </div>
+
+      <div class="to">
+
+        <form>
+
+          <div class="group">
+            <input type="text" required>
+            <span class="highlight"></span>
+            <span class="bar"></span>
+            <label>To</label>
+          </div>
+
+        </form>
+
+      </div>
+    </div>
+
+    <div class="ambulances">
+
+      <div class="inside">
+        <div class="left1">
+        </div>
+        <div class="right">
+          <div class="right1">
+            Basic Ambulance
+          </div>
+          <div class="right2">
+            4 min
+          </div>
+          <div class="right3">
+            <button class="progress-button" data-style="flip-open" data-perspective data-horizontal>Book Now</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="inside">
+        <div class="left2">
+        </div>
+        <div class="right">
+          <div class="right1">
+            Advance Ambulance
+          </div>
+          <div class="right2">
+            4 min
+          </div>
+          <div class="right3">
+            <button class="progress-button" data-style="flip-open" data-perspective data-horizontal>Book Now</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="inside">
+        <div class="left3">
+        </div>
+        <div class="right">
+          <div class="right1">
+            Mortuary Ambulance
+          </div>
+          <div class="right2">
+            4 min
+          </div>
+          <div class="right3">
+            <button class="progress-button" data-style="flip-open" data-perspective data-horizontal>Book Now</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="inside">
+        <div class="left4">
+        </div>
+        <div class="right">
+          <div class="right1">
+            Patient Transport Ambulance
+          </div>
+          <div class="right2">
+            4 min
+          </div>
+          <div class="right3">
+            <button class="progress-button" data-style="flip-open" data-perspective data-horizontal>Book Now</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="inside">
+        <div class="left5">
+        </div>
+        <div class="right">
+          <div class="right1">
+            Air Ambulance
+          </div>
+          <div class="right2">
+            4 min
+          </div>
+          <div class="right3">
+            <button class="progress-button" data-style="flip-open" data-perspective data-horizontal>Book Now</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="inside">
+        <div class="left6">
+					<img src="bike.png" width="90px; height: 90px;">
+        </div>
+        <div class="right">
+          <div class="right1">
+            Bike Ambulance
+          </div>
+          <div class="right2">
+            4 min
+          </div>
+          <div class="right3">
+          <button class="progress-button" data-style="flip-open" data-perspective data-horizontal>Book Now</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+		<script src="https://tympanus.net/Development/ProgressButtonStyles/js/classie.js"></script>
+		<script src="https://tympanus.net/Development/ProgressButtonStyles/js/progressButton.js"></script>
+		<script>
+			[].slice.call( document.querySelectorAll( 'button.progress-button' ) ).forEach( function( bttn ) {
+				new ProgressButton( bttn, {
+					callback : function( instance ) {
+						var progress = 0,
+							interval = setInterval( function() {
+								progress = Math.min( progress + Math.random() * 0.1, 1 );
+								instance._setProgress( progress );
+
+								if( progress === 1 ) {
+									instance._stop(1);
+									clearInterval( interval );
+								}
+							}, 200 );
+					}
+				} );
+			} );
+		</script>
+
+</body>
+</html>

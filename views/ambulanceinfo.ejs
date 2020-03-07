@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <link rel="icon" href="logo.png">
+    <title></title>
+
+    <style media="screen">
+
+      body{
+       background-image: linear-gradient(to top, #505285 0%, #585e92 12%, #65689f 25%, #7474b0 37%, #7e7ebb 50%, #8389c7 62%, #9795d4 75%, #a2a1dc 87%, #b5aee4 100%);
+      }
+      .container{
+
+        padding: 0px !important;
+      }
+
+      .card{
+        border-radius: 10px;
+        height:700px;
+        margin: 50px !important;
+        overflow: hidden;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
+        transition: 0.3s;
+      }
+
+      .card:hover {
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.5), 0 10px 20px 0 rgba(0, 0, 0, 0.5);
+      }
+
+      .infor li {
+        padding-left: 10px;
+        text-align: left;
+        line-height: 40px;
+      }
+
+
+
+      .track{
+        padding-left: 80px;
+        padding-right:80px;
+      }
+
+      .list-group-item{
+        height: 30px;
+        text-align: left;
+        padding: 0px;
+        padding-left: 10px;
+        font-size: 20px;
+        color: black;
+      }
+
+      .list-group-item.active {
+        font-width: bold;
+        text-align: center;
+        color: white;
+      }
+
+      .bg-warning{
+        background: white !important;
+        border: 1.5px solid #39CCCC !important;
+        color: black;
+      }
+
+      .bg-primary{
+        background: white !important;
+        border: 1.5px solid #39CCCC !important;
+        color: black;
+      }
+
+      .card-body {
+        text-align:left;
+      }
+
+
+      .button span {
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+        transition: 0.5s;
+      }
+
+      .button span:after {
+        content: '\00bb';
+        position: absolute;
+        opacity: 0;
+        top: 0;
+        right: -20px;
+        transition: 0.5s;
+      }
+
+      .button:hover span {
+        padding-right: 25px;
+      }
+
+      .button:hover span:after {
+        opacity: 1;
+        right: 0;
+      }
+
+      a {
+        margin-top:20px;
+        margin-left: 20px;
+        float: left;
+      }
+
+      ul{
+        margin-bottom: 30px!important;
+      }
+
+    </style>
+
+  </head>
+  <body>
+
+
+  <div class="container">
+    <div class="card-deck ">
+        <div class="card bg-primary">
+          <div class="card-body text-center infor">
+            <h4>About Ambulance</h4>
+            <hr>
+            <li> <b> Driver :-</b> <%= result.driver_name %> </li>
+            <li> <b> Driver Contact :-</b>  <%= result.driver_contact %>  </li>
+            <li> <b> Driver Address :-</b> <%= result.driver_address %> </li>
+            <li> <b> Type :-</b> <%= result.type %> </li>
+            <li> <b> City :-</b> <%= result.city %> </li>
+            <li> <b> State :-</b> <%= result.state %></li>
+            <li> <b> Zip :-</b> <%= result.zip %> </li>
+            <li> <b> Vehicle No :-</b> <%= result.vehicle_no %> </li>
+            <li> <b> Registration Date :-</b> <%= result.reg_date %></li>
+            <li> <b> Status :-</b> <%= result.status %></li>
+            <a class="button btn btn-primary btn-primary" style="vertical-align:middle" href="/adminhome"><span> Back </span></a>
+          </div>
+        </div>
+
+        <div class="card bg-warning">
+          <div class="card-body text-center track">
+              <h4>Tracking Info</h4>
+              <hr>
+              <ul class="list-group">
+                <li class="list-group-item active">Live</li>
+                <% if(result.status=='Engaged'){ %>
+                  <li class="list-group-item" style="color:grey;"><b style="color:black;"> User :- </b>Suryaprakash Agarwal</li>
+                  <li class="list-group-item"><b> From :- </b>Hostel 4,Manipal University</li>
+                  <li class="list-group-item"><b> To:- </b>Apollo Hospital </li>
+                <% }%>
+                <% if(result.status=='Available'){ %>
+                <li class="list-group-item" style="color:grey;"><b style="color:black;"> User :- </b>N/A</li>
+                <li class="list-group-item"><b> From :- </b></li>
+                <li class="list-group-item"><b> To:- </b> </li>
+                <% } %>
+              </ul>
+              <ul class="list-group">
+                <li class="list-group-item active">Ride 2</li>
+                <li class="list-group-item" style="color:grey;"><b style="color:black;"> User :- </b>N/A</li>
+                <li class="list-group-item"><b> Fro: :- </b></li>
+                <li class="list-group-item"><b> To:- </b> </li>
+              </ul>
+              <ul class="list-group">
+                <li class="list-group-item active">Ride 1</li>
+                <li class="list-group-item" style="color:grey;"><b style="color:black;">  User :- </b>N/A</li>
+                <li class="list-group-item"><b> From :- </b></li>
+                <li class="list-group-item"><b> To:- </b> </li>
+              </ul>
+          </div>
+        </div>
+    </div>
+  </div>
+
+
+</body>
+</html>

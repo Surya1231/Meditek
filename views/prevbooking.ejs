@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>PastBooking</title>
+	 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+	<link rel="icon" href="logo.png">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+	<style>
+
+	  
+	    .hid{
+          font-size:12px;
+          padding-bottom:10px;
+          height: auto;
+        }
+
+        .hiddd{
+          display:none;
+        }
+        
+        .clear{
+            clear: both;
+        }
+        
+        .list-groupp{
+          margin-top:2%;
+          cursor:pointer;
+        }
+
+        .list-group-iteem{
+          padding:1%;
+          padding-right:2%;
+          padding-left: 7%;
+          min-height:10px;
+          background: white;
+          border-radius: 20px;
+          box-sizing: border-box;
+          border: 2px solid #6D7FCC;
+          text-width:bold;
+
+        }
+
+        .list-group-iteem hr{
+          margin-top:2px;
+          margin-bottom:10px;
+
+        }
+        
+	</style>
+</head>
+<body>
+    <div class="container">
+    <h1> My Bookings</h1>
+    <hr>
+	<% for(i=0;i<list.length;i++){ ambulance=ambulances[i];item=list[i]; console.log(i); %>
+              <div class="list-groupp">
+        		    <div onclick="showfeedback(<%="feedback"+i%>)" class="list-group-iteem" style="text-transform:uppercase;">FROM :  <%=item.from%>    TO : <%=item.to%><i class="fas fa-caret-down" style="float:right"></i>
+
+                  <div class="clear"></div>
+                  <div class="hid hiddd" id=<%='feedback'+i%> > <hr > <%=ambulance.driver_name%> <br> <%=ambulance.driver_contact%> 
+                  </div> </div>
+              </div>
+                 
+        	<% }; %>
+    </div>
+        	
+    <script>
+        function showfeedback(id){
+                console.log(id.id);
+                document.getElementById(id.id).classList.toggle("hiddd");
+              }
+    </script>
+</body>
+</html>

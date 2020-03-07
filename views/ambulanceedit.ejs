@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Edit Ambulances</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <link rel="icon" href="logo.png">
+ <style media="screen">
+   .container{
+   margin-top:50px;
+   background: white;
+   padding: 1%;
+   border-radius: 1%;
+  }
+
+   body{
+     background: linear-gradient(to top, #505285 0%, #585e92 12%, #65689f 25%, #7474b0 37%, #7e7ebb 50%, #8389c7 62%, #9795d4 75%, #a2a1dc 87%, #b5aee4 100%);
+     background-size: cover;
+   }
+   
+   .delete{
+    float:right;
+    position:relative;
+    top: -2.0vw;
+   }
+ </style>
+  </head>
+  <body>
+
+<div class="container border">
+
+     <form action="/updateambulance/<%=ambulance._id%>?_method=PUT" method="POST">
+                      <div class="form-row">
+                        <div class="form-group col-md-12">
+                          <label for="Type">Type</label>
+                          <select id="Type"  name=ambulance["type"] class="form-control">
+                            <option selected disabled> <%= ambulance.type %></option>
+                          <option value="Basic Life Support Ambulance">Basic Life Support Ambulance</option>
+                          <option value="Advanced Life Support Ambulance">Advanced Life Support Ambulance</option>
+                          <option value="Neonatal Ambulance">Neonatal Ambulance</option>
+                          <option value="Air Ambulance">Air Ambulance</option>
+                          <option value="Patient Transport Vehicle">Patient Transport Vehicle</option>
+                          <option value="Mortuary Ambulance">Mortuary Ambulance</option>
+                          </select>
+                        </div>
+                      </div>
+
+                      <div class="form-row">
+                        <div class="form-group col-md-6">
+                          <label for="DriverName">Driver Name</label>
+                          <input type="text" class="form-control" name="ambulance[driver_name]" id="DriverName" value="<%= ambulance.driver_name %>" >
+                        </div>
+                        <div class="form-group col-md-6">
+                          <label for="mobile">Mobile No</label>
+                          <input type="text" class="form-control" name="ambulance[driver_contact]" id="mobile" value=<%= ambulance.driver_contact %>>
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="inputAddress">Address</label>
+                        <input type="text" class="form-control" id="inputAddress" value="<%= ambulance.driver_address %>" name="ambulance[driver_address]">
+                      </div>
+
+                      <div class="form-row">
+                        <div class="form-group col-md-6">
+                          <label for="inputCity">City</label>
+                          <input type="text" class="form-control" id="inputCity" name="ambulance[city]" value="<%= ambulance.city %>" >
+                        </div>
+                        <div class="form-group col-md-4">
+                          <label for="inputState">State</label>
+                          <input type="text" class="form-control" id="inputState" name="ambulance[state]" value="<%= ambulance.state %>">
+                        </div>
+                        <div class="form-group col-md-2">
+                          <label for="inputZip">Zip</label>
+                          <input type="text" class="form-control" id="inputZip" name="ambulance[zip]" value="<%= ambulance.zip %>">
+                        </div>
+                      </div>
+                      <div class="form-row">
+                          <div class="form-group col-md-6">
+                            <label for="inputVehicleNo">Vehicle No</label>
+                            <input type="text" class="form-control" id="inputVehicleNo" name="ambulance[vehicle_no]" value="<%= ambulance.vehicle_no %>">
+                          </div>
+                          <div class="form-group col-md-6">
+                            <label for="status">Status</label>
+                         <input type="text" class="form-control" id="status" name="ambulance[status]" value="<%= ambulance.status %>">  
+                      </div>
+                    </div>
+                      <button type="submit"  class="btn btn-success"> Update</button>
+                      
+                     
+                      
+                      
+                    </form>
+                    
+                    <form action="/deleteambulance/<%= ambulance._id %>?_method=delete" method="POST">
+                            <button type="submit"  class="btn btn-danger pull pull-right delete" > Delink </button>
+                    </form>
+                    
+                   
+                    
+  </div>
+</body>
+</html>
